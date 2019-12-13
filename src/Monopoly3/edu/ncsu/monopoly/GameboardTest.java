@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 
 public class GameboardTest extends TestCase {
 
-	IOwnable cell;
+	Cell cell;
 	GameBoard gameBoard;
 	
 	protected void setUp() throws Exception {
