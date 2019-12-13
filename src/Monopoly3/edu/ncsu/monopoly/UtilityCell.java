@@ -14,9 +14,9 @@ public class UtilityCell extends Cell {
 	}
 
 	public int getRent(int diceRoll) {
-		if(owner.numberOfUtil() == 1) {
+		if(nouNom.numberOfUtil() == 1) {
 			return diceRoll * 4;
-		} else if (owner.numberOfUtil() >= 2) {
+		} else if (nouNom.numberOfUtil() >= 2) {
 			return diceRoll * 10;
 		}
 		return 0;
@@ -26,10 +26,10 @@ public class UtilityCell extends Cell {
 		Player currentPlayer = null;
 		if(!isAvailable()) {
 			currentPlayer = GameMaster.instance().getCurrentPlayer();
-			if(owner != currentPlayer) {
+			if(nouNom != currentPlayer) {
 				GameMaster.instance().utilRollDice();
 				int diceRoll = GameMaster.instance().getUtilDiceRoll();
-				currentPlayer.payRentTo(owner, getRent(diceRoll));
+				currentPlayer.payRentTo(nouNom, getRent(diceRoll));
 			}
 		}
 	}
